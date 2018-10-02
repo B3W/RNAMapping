@@ -6,7 +6,7 @@ Use 'retrieve_sra.sh accession_nums/organism_folder/accessions.txt' to get the .
 Copy appropriate .sra into 'sra_files/organism_folder/'
 
 Use 'dir_sra2fastq.sh sra_files/organism_folder/' to convert all .sra files in 'sra_files/organism_folder' to fastq format
-    Fastq files can be found in 'fastq_files/organism_folder/'
+    Fastq files located in 'fastq_files/organism_folder/'
 
 Download gzipped fasta file containing CDS sequences of genome from ensemblgenomes.org into 'genome_cds/organism_folder/'
 Unzip with gunzip
