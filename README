@@ -14,7 +14,6 @@ Unzip with gunzip
 Index CDSs with 'kallisto_index.sh genome_cds/organism_folder/organism_cds.fa'
 Move to 'indexed_genome_cds/organism_folder'
 
-'mkdir tpm_data/organism_folder/'
 Map fastq files with: 
     'kallisto_map_fastq.sh tpm_data/organism_folder				\
     			   indexed_genome_cds/organism_folder/organism_cds	\
