@@ -1,0 +1,5 @@
+# Ignore subdirectories
+*/*
+
+# Ignore temp files
+/*~

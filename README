@@ -1,0 +1,25 @@
+Find SRA accession numbers for analyzing on NCBI and download into accession_nums folder
+
+Use 'retrieve_sra.sh accession_nums/file/with/accessions.txt' to get the .sra files associated with accession numbers
+    .sra files can be found in 'ncbi/public/sra/' 
+
+Copy appropriate .sra into 'sra_files/organism_folder/'
+
+Use 'dir_sra2fastq.sh sra_files/organism_folder/' to convert all .sra files in 'sra_files/organism_folder' to fastq format
+    Fastq files can be found in 'fastq_files/organism_folder/'
+
+Download gzipped fasta file containing CDS sequences of genome from ensemblgenomes.org into 'genome_cds/organism_folder/'
+Unzip with gunzip
+
+Index CDSs with 'kallisto_index.sh genome_cds/organism_folder/organism_cds.fa'
+Move to 'indexed_genome_cds/organism_folder'
+
+'mkdir tpm_data/organism_folder/'
+Map fastq files with: 
+    'kallisto_map_fastq.sh tpm_data/organism_folder				\
+    			   indexed_genome_cds/organism_folder/organism_cds	\
+			   fastq_files/organism_folder/acc_num_1.fastq.gz 	\
+			   fastq_files/organism_folder/acc_num_2.fastq.gz'
+
+Extract tpm data from .tsv files and merg into one file containing only tpm data:
+    'merge_tpm.sh tpm_data/organim_folder'  
