@@ -23,4 +23,6 @@ Map fastq files with:
 Extract tpm data from .tsv files and merg into one file containing only tpm data:
     'merge_tpm.sh tpm_data/organim_folder'  
 
+Results found in merged.tsv
+
 NOTE: In current state, directory structure should be set up prior to using the scripts.
