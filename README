@@ -1,6 +1,6 @@
 Find SRA accession numbers for analyzing on NCBI and download into accession_nums folder
 
-Use 'retrieve_sra.sh accession_nums/file/with/accessions.txt' to get the .sra files associated with accession numbers
+Use 'retrieve_sra.sh accession_nums/organism_folder/accessions.txt' to get the .sra files associated with accession numbers
     .sra files can be found in 'ncbi/public/sra/' 
 
 Copy appropriate .sra into 'sra_files/organism_folder/'
