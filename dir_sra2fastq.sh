@@ -6,7 +6,7 @@ if [ ! -d "$1" ]; then
     exit 1
 fi
 
-# Get name for outdir
+# Get name for outdir from command line
 IFS='/' read -ra dir_name <<< "$1"
 outdir="./fastq_files/""${dir_name[-1]}""/"
 
@@ -18,20 +18,14 @@ fi
 # Convert sra files
 module load sra-toolkit
 
-if [[ ${1: -1} != "/" ]]; then
-    
-    for filename in "$1"/*.sra; do
-	[ -e "$filename" ] || continue
-	echo "Converting $filename to fastq format..."
-	fastq-dump --outdir "$outdir" --split-files --origfmt --gzip "$filename"
-    done
-
-else
-
-    for filename in "$1"*.sra; do
-	[ -e "$filename" ] || continue
-	echo "Converting $filename to fastq format..."
-	fastq-dump --outdir "$outdir" --split-files --origfmt --gzip "$filename"
-    done
-
+# Normalize input directory name
+indir="$1"
+if [[ ${indir: -1} != "/" ]]; then
+    indir="$1""/"
 fi
+
+for filename in "$indir"*.sra; do
+    [ -e "$filename" ] || continue
+    echo "Converting $filename to fastq format..."
+    fastq-dump --outdir "$outdir" --split-files --origfmt --gzip "$filename"
+done
