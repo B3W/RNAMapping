@@ -15,8 +15,8 @@ Index CDSs with 'kallisto_index.sh genome_cds/organism_folder/organism_cds.fa'
 Move to 'indexed_genome_cds/organism_folder'
 
 Map fastq files with: 
-    'kallisto_map_fastq.sh tpm_data/organism_folder				\
-    			   indexed_genome_cds/organism_folder/organism_cds	\
+    'kallisto_map_fastq.sh indexed_genome_cds/organism_folder/organism_cds	\
+			   tpm_data/organism_folder				\
 			   fastq_files/organism_folder/acc_num_1.fastq.gz 	\
 			   fastq_files/organism_folder/acc_num_2.fastq.gz'
 

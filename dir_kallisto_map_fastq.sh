@@ -34,7 +34,7 @@ for i in ${!acc_nums[@]}; do
 	 pair_index=$(($i+1))
 	 printf '\t%s\n' "${acc_nums[$pair_index]}"
 	 # Call subshell with kallisto mapping function
-	 ( ./kallisto_map_fastq.sh "$outdir" "indexed_file" "${acc_nums[$i]}" "${acc_nums[$pair_index]}" )
+	 ( ./kallisto_map_fastq.sh "indexed_file" "$outdir" "${acc_nums[$i]}" "${acc_nums[$pair_index]}" )
      fi
      echo
 done

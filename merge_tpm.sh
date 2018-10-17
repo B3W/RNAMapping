@@ -22,7 +22,7 @@ for D in */; do
 done
 
 echo "Merging files..."
-awk '{arr[$1]=arr[$1]"\t"$2}END{for(i in arr)print i,arr[i]}' *_tpm > "merged.tsv"
+awk '{arr[$1]=arr[$1]"\t"$2}END{for(i in arr)print i,arr[i]}' *_tpm > "salmonella_enterica_tpm_merged.tsv"
 
 # Restore working directory
 popd
